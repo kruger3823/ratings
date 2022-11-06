@@ -127,7 +127,7 @@ def view(request):
         if d<0.5:
             a="weak ratings"
         else:
-            a="strong ratings"
+            a="Strong ratings"
     print(d)
 
 
