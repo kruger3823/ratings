@@ -1,12 +1,12 @@
 {% extends "review/base_teacher.html" %}
-    {% block content %}
-<h1 xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml"> Reviews </h1>
-            {% for posts in posts %}
+{%block content%}
+<h1>Teacher</h1>
+{% for posts in posts %}
                 <article class="media content-section">
                     <a class="mr-2" href="{% url 'user_reviews' posts.author.username %}"> <img class="rounded-circle article-img" src="{{ posts.author.profile.image.url }}"> </a>
                     <div class="media-body">
                         <div class="article-metadata">
-                            <h5>COLLEGE :<font color="green"> {{posts.instructor}} </font></h5>
+                            <h5>Instructor :<font color="green"> {{posts.instructor}} </font></h5>
                             Ratings : {{posts.ratings}}
                             <p>
                                 <small class="text-muted"> Date Posted : {{posts.date_posted|date:"F d, Y" }}</small>

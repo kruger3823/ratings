@@ -17,4 +17,9 @@ urlpatterns = [
     path('review/<int:pk>/delete/', PostDeleteView.as_view(), name='review-delete'),
     path('review/<int:pk>/', PostDetailView.as_view(), name='review-detail'),
     path('about/', views.about, name='review-about'),
+
+
+
+path('doctor_view_patient_view/',views.view,name="doctor_view_patient_view"),
+path('apply/',views.apply,name="apply"),
 ]

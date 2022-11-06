@@ -1,18 +1,25 @@
-{% extends "review/base.html" %}
+{% extends "review/base_teacher.html" %}
 {% block content %}
 <h1 xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml"> Reviews </h1>
 <article class="media content-section">
     <a class="mr-2" href="{% url 'user_reviews' object.author.username %}"> <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}"> </a>
     <div class="media-body">
         <div class="article-metadata">
-            <h5>Instructor :<font color="green"> {{object.instructor}} </font></h5>
+            <h5>COLLEGE  :<font color="green"> {{object.instructor}} </font></h5>
             Ratings : {{object.ratings}}
             <p>
                 <small class="text-muted"> Date Posted : {{object.date_posted|date:"F d, Y" }}</small>
             </p>
         </div>
         <h5 class="article-title">Course : {{object.course}}</h5>
-        <p class="article-content"> Comments : {{object.comments}}</p>
+
+        <p class="article-content"> CLEANLINESS : {{object.comments}}</p>
+        <p class="article-content"> PARTIALITY : {{object.comments1}}</p>
+        <p class="article-content"> PUNCTUALITY : {{object.comments2}}</p>
+        <p class="article-content"> SECURITY : {{object.comments3}}</p>
+        <p class="article-content"> TRANSPARENCY : {{object.comments4}}</p>
+        <p class="article-content"> FEE : {{object.comments5}}</p>
+        <p class="article-content"> EXTRACURICULUMS: {{object.comments6}}</p>
         {% if object.author == user %}
             <a class="mr-2" href="{% url 'review-update' object.id %}">Update</a>
             <a class="mr-2" href="{% url 'review-delete' object.id %}">Delete</a>

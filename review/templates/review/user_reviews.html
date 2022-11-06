@@ -1,20 +1,31 @@
 {% extends "review/base.html" %}
 {% block content %}
-
+{% load widget_tweaks %}
 <h1 xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml"> Reviews By  {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
 {% for posts in posts %}
+<h1>hii</h1>
 <article class="media content-section">
     <a class="mr-2" href="{% url 'user_reviews' posts.author.username %}"> <img class="rounded-circle article-img" src="{{ posts.author.profile.image.url }}"> </a>
     <div class="media-body">
         <div class="article-metadata">
             <h5>Instructor :<font color="green"> {{posts.instructor}} </font></h5>
+
+            {% render_field PostCreateView.assignedTeacherId class="form-control" placeholder="tea" %}
             Ratings : {{posts.ratings}}
             <p>
                 <small class="text-muted"> Date Posted : {{posts.date_posted|date:"F d, Y" }}</small>
             </p>
         </div>
         <h5>Course : {{posts.course}}</h5>
-        <p class="article-content"> Comments : {{posts.comments}}</p>
+
+        <p class="article-content" > TIMELINESS : {{posts.comments}} </p>
+        <p class="article-content"> PARTIALITY : {{posts.comments1}}</p>
+        <p class="article-content"> PUNCTUALITY : {{posts.comments2}}</p>
+        <p class="article-content"> LOUDNESS : {{posts.comments3}}</p>
+        <p class="article-content"> VISIBILITY : {{posts.comments4}}</p>
+        <p class="article-content"> DOUBT CLARITY : {{posts.comments5}}</p>
+        <p class="article-content"> PATIENTS: {{posts.comments6}}</p>
+
     </div>
     <a class="mr-2" href="{% url 'review-detail' posts.id %}">View</a>
 </article>

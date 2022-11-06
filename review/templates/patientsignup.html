@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>LazyCoder || sumit</title>
+  <style type="text/css">
+    body {
+      color: #aa082e;
+      background-color: beige;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072gg, #8811c5);
+      color: black;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: goldenrod;
+      color: black;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>TEACHER REVIEW SYSTEM</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+              </div>
+               <div class="form-group">
+                {% render_field patientForm.sub class="form-control" placeholder="Subject" %}
+              </div><br>
+              <div class="form-group">
+                {% render_field patientForm.partiality class="form-control" placeholder="Partiality" %}
+              </div><br>
+              <div class="form-group">
+                {% render_field patientForm.time class="form-control" placeholder="Timeliness" %}
+              </div>
+              <br>
+              <div class="form-group">
+                {% render_field patientForm.loud class="form-control" placeholder="Loudness" %}
+              </div>
+              <br>
+              <div class="form-group">
+                {% render_field patientForm.clarity class="form-control" placeholder="Clarity" %}
+              </div>
+              <br>
+              <div class="form-group">
+                {% render_field patientForm.punctual class="form-control" placeholder="Punctual" %}
+              </div>
+              <br>
+
+              <div class="form-group">
+                {% render_field patientForm.symptoms class="form-control" placeholder="Patience" %}
+              </div><br>
+              <div class="form-group">
+                {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field userForm.password class="form-control" placeholder="Password" %}
+              </div><br>
+              <div class="form-group">
+                {% render_field patientForm.mobile class="form-control" pattern="[6789][0-9]{9}" placeholder="Rating out of 10" %}
+              </div><br>
+              <div class="form-group">
+                {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Teacher" %}
+                
+
+        
+                  
+              </div>
+
+            </div><br>
+          </div>
+          <button type="submit" class="btnSubmit">Submit</button>
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo95h8IMCTTIqccztDJF3LmLN7fRcassA&libraries=geometry,places&callback=initMap">
+</script>
+</body>
+
+
+</html>

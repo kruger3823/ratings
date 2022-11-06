@@ -21,20 +21,19 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-
+                <a class="navbar-brand mr-4" href="{% url 'doctor_view_patient_view' %}">Review your Ratings</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-
+                        <a class="nav-item nav-link" href="{% url 'review-home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'review-about' %}">About</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" href="{% url 'apply' %}">Write a Review</a>
-                            <a class="nav-item nav-link" href="{% url 'review-create' %}">Write Review about COLLEGE</a>
+
                             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                         {% else %}
@@ -59,21 +58,7 @@
                 {% endif %}
                 {% block content %}{% endblock %}
             </div>
-            <div class="col-md-4">
-                <div class="content-section">
-                    <h3>Academic year 22-23 feedback</h3>
-                    <p class='text-muted'>Teachers and their subjects
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-light">MATHS - Alan</li>
-                        <li class="list-group-item list-group-item-light">CHEMISTRY - Mubin</li>
-                        <li class="list-group-item list-group-item-light">PHYSICS - Demin</li>
-                        <li class="list-group-item list-group-item-light">BIOLOGY - Sreelatha</li>
-                    <li class="list-group-item list-group-item-light">HINDI - Prameela</li>
 
-                    </ul>
-                    </p>
-                </div>
-            </div>
         </div>
     </main>
     <!-- Optional JavaScript -->

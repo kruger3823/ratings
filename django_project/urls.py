@@ -19,11 +19,14 @@ from users import views as users_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from users import views
 
 urlpatterns = [
+path('afterlogin', views.afterlogin, name='afterlogin'),
     path('admin/', admin.site.urls),
     path('', include('review.urls')),
-    path('register/', users_views.register, name = 'register' ),
+    path('student_register/', users_views.student_register, name = 'student_register' ),
+    path('teacher_register/', users_views.teacher_register, name = 'teacher_register' ),
     path('profile/', users_views.profile, name = 'profile' ),
     path('login/', auth_views.LoginView.as_view(template_name = 'users/login.html' ), name = 'login' ),
     path('logout/', auth_views.LogoutView.as_view(template_name = 'users/logout.html'), name = 'logout' ),
