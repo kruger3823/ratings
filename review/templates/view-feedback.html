@@ -34,43 +34,20 @@
       <h6 class="panel-title">Your Reviews</h6>
     </div>
     <table class="table table-hover" id="dev-table">
-      <thead>
-        <tr>
-           <th>Subject</th>
-          <th>Rating</th>
-          <th>Patience</th>
-          <th>Loud</th>
-          <th>Clarity</th>
-          <th>Partiality</th>
-          <th>Punctual</th>
-          <th>Time</th>
 
-        </tr>
-      </thead>
-      {% for p in patients %}
-      <tr>
-        <td>{{p.sub}}</td>
-        <td>{{p.mobile}}</td>
-         <td>{{p.symptoms}}</td>
-        <td>{{p.loud}}</td>
-        <td>{{p.clarity}}</td>
-        <td>{{p.partiality}}</td>
-        <td>{{p.punctual}}</td>
-        <td>{{p.time}}</td>
-
-
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
 
   {%else%}
   <br><br><br>
   <h4 style="text-align: center;color: red;">No Records Found !!!</h4>
   {% endif %}
-<div>Hello teacher you have {{a}}!</div>
+<div>Hello teacher you have overall rating {{a}}%</div><br>
+<div>Hello teacher you have {{b}}% in patience</div><br>
+  <div>Hello teacher you have {{l}}% in loudness</div><br>
+  <div>Hello teacher you have {{e}}% in clarity</div><br>
+  <div>Hello teacher you have {{f}}% in partiality</div><br>
+  <div>Hello teacher you have {{g}}% punctuality</div><br>
+  <div>Hello teacher you have {{h}}% in timeliness</div><br>
 
-</div>
 
 
 

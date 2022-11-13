@@ -36,14 +36,21 @@ class Patient(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     sub = models.CharField(max_length=100, choices=(
         ('Maths', 'Maths'), ('Chemistry', 'Chemistry'), ('Physics', 'Physics'), ('Biology', 'Biology'), ('Hindi', 'Hindi')))
-    address = models.CharField(max_length=40)
-    time = models.CharField(max_length=40)
-    punctual = models.CharField(max_length=40)
-    loud = models.CharField(max_length=40)
-    partiality = models.CharField(max_length=40)
-    clarity = models.CharField(max_length=40)
-    mobile = models.IntegerField(null=True,verbose_name='Ratings')
-    symptoms = models.CharField(max_length=100, null=False)
+    #address = models.IntegerField(max_length=40)
+    time = models.IntegerField(max_length=40 ,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    punctual = models.IntegerField(max_length=40,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    loud = models.IntegerField(max_length=40,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    partiality = models.IntegerField(max_length=40,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    clarity = models.IntegerField(max_length=40,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    mobile = models.IntegerField(null=True,verbose_name='Ratings',choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
+    symptoms = models.IntegerField(max_length=100, null=False,choices=(
+        (1,1),(2,2),(3,3),(4,4),(5,5)))
     assignedDoctorId = models.PositiveIntegerField(null=True)
     admitDate = models.DateField(auto_now=True)
     status = models.BooleanField(default=False)

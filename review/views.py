@@ -116,20 +116,108 @@ def view(request):
     patients=models.Patient.objects.all().filter(status=False,assignedDoctorId=request.user.id)
     hint = models.Patient.objects.all().filter(user__id=request.user.id)
     print(hint)
-    ratlist=[]
+
+    ratlist = []
+    ratlist1 = []
+    ratlist2 = []
+    ratlist3 = []
+    ratlist4 = []
+    ratlist5 = []
+    ratlist6 = []
+
     for i in hint:
         ratlist.append(i.mobile)
     print(ratlist)
-    c=0
+
+    for i in hint:
+        ratlist1.append(i.punctual)
+    print(ratlist)
+    for i in hint:
+        ratlist2.append(i.loud)
+    print(ratlist)
+    for i in hint:
+        ratlist3.append(i.partiality)
+    print(ratlist)
+    for i in hint:
+        ratlist4.append(i.clarity)
+    print(ratlist)
+    for i in hint:
+        ratlist5.append(i.symptoms)
+    print(ratlist)
+    for i in hint:
+        ratlist6.append(i.time)
+    print(ratlist)
+
+    a=0
     for j in ratlist:
-        c=c+j
-        d=c/(len(ratlist)*10)
-        if d<0.5:
-            a="weak ratings"
-        else:
-            a="Strong ratings"
+        a=a+j
+        print(a)
+    if (a/(len(ratlist)*10))*100 <50:
+        d=(a / (len(ratlist) * 10))*100
+        a=d
+    else:
+        d = (a / (len(ratlist) * 10)) * 100
+        a=d
+    print(a)
+
+    b=0
+    for j in ratlist1:
+        b=b+j
+    if (b / (len(ratlist) * 10)) * 100 < 50:
+            d = (b / (len(ratlist) * 10)) * 100
+            b = d
+    else:
+            d = (b / (len(ratlist) * 10)) * 100
+            b = d
+    l=0
+    for j in ratlist2:
+        l=l+j
+    if (l / (len(ratlist) * 10)) * 100 < 50:
+            d = (l / (len(ratlist) * 10)) * 100
+            l = d
+    else:
+            d = (l / (len(ratlist) * 10)) * 100
+            l = d
+    e=0
+    for j in ratlist3:
+        e=e+j
+    if (e/(len(ratlist)*10))*100 <50:
+        d=(e / (len(ratlist) * 10))*100
+        e=d
+    else:
+        d = (e / (len(ratlist) * 10)) * 100
+        e=d
+
+    f=0
+    for j in ratlist4:
+        f=f+j
+    if (f/(len(ratlist)*10))*100 <50:
+        d=(f / (len(ratlist) * 10))*100
+        f=d
+    else:
+        d = (f / (len(ratlist) * 10)) * 100
+        f=d
+    g=0
+    for j in ratlist5:
+        g=g+j
+    if (g/(len(ratlist)*10))*100 <50:
+        d=(g / (len(ratlist) * 10))*100
+        g=d
+    else:
+        d = (g / (len(ratlist) * 10)) * 100
+        g=d
     print(d)
+    h = 0
+    for j in ratlist6:
+        h = h + j
+    if (h/(len(ratlist)*10))*100 <50:
+        d=(h / (len(ratlist) * 10))*100
+        h=d
+    else:
+        d = (h / (len(ratlist) * 10)) * 100
+        h=d
 
 
-    return render(request,'view-feedback.html',{'patients':patients,'a':a},)
+
+    return render(request,'view-feedback.html',{'patients':patients,'a':a,'b':b,'l':l,'e':e,'f':f,'g':g,'h':h},)
 
